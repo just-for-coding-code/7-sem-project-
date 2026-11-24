@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; script-src 'self';"
+  />
+  <title>Mesh Net — Offline Bluetooth Mesh Chat for Android</title>
+  <meta
+    name="description"
+    content="Download Mesh Net for Android. Zero-pairing Bluetooth Low Energy multi-hop mesh chat with #channels, ECDH + AES-256-GCM encrypted DMs, and Panic Wipe."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="icon" type="image/jpeg" href="./assets/icon.jpg" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="#top" class="brand">
+        <img src="./assets/icon.jpg" alt="Mesh Net icon" class="brand-icon" />
+        <span class="brand-name">Mesh Net</span>
+        <span class="brand-tag">BLE Mesh</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#features">Architecture</a>
+        <a href="#commands">Commands</a>
+        <a href="#install">Install APK</a>
+        <a href="./downloads/meshnet-v1.0.apk" download="MeshNet-v1.0.apk" class="nav-cta">
+          Download APK
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero container">
+      <div class="hero-copy">
+        <div class="status-pill">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          <span>Offline · Zero Pairing · Multi-Hop BLE</span>
+        </div>
+
+        <h1>Peer-to-peer mesh chat without internet or servers.</h1>
+        <p class="hero-subtitle">
+          Mesh Net turns nearby Android phones into an encrypted, self-forming Bluetooth Low Energy
+          mesh network. Join <code>#mesh</code>, relay messages up to 5 hops, and exchange
+          ECDH + AES-256-GCM encrypted DMs completely off-grid.
+        </p>
+
+        <div class="download-card" id="download">
+          <div class="download-actions">
+            <a
+              href="./downloads/meshnet-v1.0.apk"
+              download="MeshNet-v1.0.apk"
+              class="btn-primary"
+              id="downloadApkBtn"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span>Download Mesh Net APK</span>
+            </a>
+            <span class="version-badge">v1.0 · Android 7.0+ (API 24+) · 24 MB</span>
+          </div>
+
+          <div class="checksum-row">
+            <span class="checksum-label">SHA-256</span>
+            <code class="checksum-value" id="sha256Text">
+              ec1a0f6f643b5e156a02d3c8feb6249c69b576ef0af6ab05f6b52a76a509949c
+            </code>
+            <button type="button" class="copy-btn" id="copyShaBtn">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-preview" aria-label="Mesh Net conversation preview">
+        <div class="preview-header">
+          <div class="preview-title">
+            <span class="dot green"></span>
+            <strong>Mesh Net</strong>
+            <span class="handle-chip">@anon_a3f9</span>
+          </div>
+          <span class="peer-counter">3 peers nearby</span>
+        </div>
+        <div class="preview-tabs">
+          <span class="tab active">#mesh</span>
+          <span class="tab">#general</span>
+          <span class="tab">#sos</span>
+          <span class="tab">@mira</span>
+        </div>
+        <div class="preview-feed" id="demoFeed">
+          <div class="msg sys">Mesh ready · Scanning nearby devices</div>
+          <div class="msg incoming">
+            <div class="msg-sender">@mira</div>
+            <p>Anyone near North Gate? Cell towers are down here.</p>
+            <div class="msg-time">4:19 PM</div>
+          </div>
+          <div class="msg incoming">
+            <div class="msg-sender">@kaito</div>
+            <p>Copy that — relayed via @soren, we have power &amp; water at Hall B.</p>
+            <div class="msg-time">2 hops · 4:20 PM</div>
+          </div>
+          <div class="msg outgoing">
+            <p>On my way now. Switching to encrypted DM.</p>
+            <div class="msg-time">4:20 PM</div>
+          </div>
+        </div>
+        <div class="preview-footer">
+          <span>SERVICE UUID</span>
+          <code>F47B5E2D-4A9E-4C5A-9B3F-8E1D2C3A4B5C</code>
+        </div>
+      </div>
+    </section>
+
+    <section class="features container" id="features">
+      <div class="section-heading">
+        <span class="eyebrow">DECENTRALIZED ARCHITECTURE</span>
+        <h2>Built for resilient local communication</h2>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="feature-kicker">01 / DUAL-ROLE BLE</div>
+          <h3>Zero-Pairing Auto-Mesh</h3>
+          <p>
+            Simultaneously runs a BLE GATT Server + Advertiser and BLE Scanner + GATT Client so
+            nearby Android devices connect automatically without manual Bluetooth pairing.
+          </p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-kicker">02 / MULTI-HOP ROUTING</div>
+          <h3>Store-and-Forward Relay</h3>
+          <p>
+            Deduplicates packet IDs, decrements TTL across up to 5 mesh hops, and replays buffered
+            packets when new neighbors enter range.
+          </p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-kicker">03 / END-TO-END CRYPTO</div>
+          <h3>ECDH + AES-256-GCM DMs</h3>
+          <p>
+            Private direct messages derive a shared secret using P-256 ECDH keys and encrypt with
+            AES-256-GCM so relay hops cannot inspect private payloads.
+          </p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-kicker">04 / EPHEMERAL PRIVACY</div>
+          <h3>One-Tap Panic Wipe</h3>
+          <p>
+            Zero accounts, phone numbers, or cloud sync. Use Panic Wipe or run <code>/wipe</code>
+            to erase local Room logs and rotate to a fresh cryptographic identity.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="commands container" id="commands">
+      <div class="section-heading">
+        <span class="eyebrow">MESH CONSOLE</span>
+        <h2>IRC-style slash commands</h2>
+      </div>
+      <div class="command-grid">
+        <div class="cmd-item"><code>/nick &lt;handle&gt;</code><span>Set your mesh display handle</span></div>
+        <div class="cmd-item"><code>/join #channel</code><span>Create or switch to a topic channel</span></div>
+        <div class="cmd-item"><code>/msg @peer &lt;text&gt;</code><span>Send an ECDH-encrypted private DM</span></div>
+        <div class="cmd-item"><code>/who</code><span>List direct &amp; multi-hop online peers</span></div>
+        <div class="cmd-item"><code>/ping</code><span>Broadcast a tactile BLE mesh ping wave</span></div>
+        <div class="cmd-item"><code>/wipe</code><span>Erase messages &amp; rotate identity keys</span></div>
+      </div>
+    </section>
+
+    <section class="install container" id="install">
+      <div class="install-box">
+        <div>
+          <span class="eyebrow">SIDELOAD GUIDE</span>
+          <h2>Install Mesh Net on Android</h2>
+          <ol class="steps">
+            <li>Tap <strong>Download Mesh Net APK</strong> above to save <code>MeshNet-v1.0.apk</code>.</li>
+            <li>Open the downloaded file and allow <strong>Install unknown apps</strong> if prompted.</li>
+            <li>Launch Mesh Net, grant Bluetooth permissions, and start chatting across the BLE mesh.</li>
+          </ol>
+        </div>
+        <div class="install-cta-col">
+          <a
+            href="./downloads/meshnet-v1.0.apk"
+            download="MeshNet-v1.0.apk"
+            class="btn-primary full-width"
+          >
+            Download MeshNet-v1.0.apk
+          </a>
+          <p class="small-note">
+            No internet, SIM card, or Google account required after installation.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <span>Mesh Net BLE Mesh · Local-First P2P Communication</span>
+    <span class="mono">com.aistudio.bluewave.p2pbtq</span>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>

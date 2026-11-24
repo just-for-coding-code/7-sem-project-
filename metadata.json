@@ -1,0 +1,6 @@
+{
+  "name": "Mesh Net",
+  "description": "Decentralized offline Bluetooth Low Energy mesh chat with topic channels, multi-hop relay, and end-to-end encrypted direct messages.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

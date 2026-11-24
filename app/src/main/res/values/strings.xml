@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Mesh Net</string>
+    <string name="mesh_subtitle">BLE Mesh Network</string>
+    <string name="action_grant_permissions">Grant Bluetooth Access</string>
+    <string name="action_open_settings">App Settings</string>
+    <string name="action_enable_bt">Turn On Bluetooth</string>
+    <string name="action_panic_wipe">Panic Wipe</string>
+    <string name="action_peers">Peers</string>
+    <string name="action_send_message">Send message</string>
+    <string name="action_attach_photo">Attach Photo</string>
+    <string name="hint_mesh_input">Message %1$s…</string>
+    <string name="hint_dm_input">Encrypted message to @%1$s…</string>
+</resources>
